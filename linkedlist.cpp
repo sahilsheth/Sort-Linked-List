@@ -30,7 +30,10 @@ int linkedlist::count() {
 }
 
 void linkedlist::addToFront(int n) {
-
+    Node* newNode=new node;        
+    newNode->data=d;               
+    newNode->next=head;            
+    head=newNode;  
 }
 
 double linkedlist::average() {
