@@ -1,7 +1,7 @@
 #include "linkedlist.h"
 
 linkedlist::linkedlist() {
-   this->data = 0;
+   //this->data = 0;
    this->head = NULL;
 }
 
