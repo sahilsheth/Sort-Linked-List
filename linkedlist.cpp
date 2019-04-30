@@ -2,7 +2,7 @@
 
 linkedlist::linkedlist() {
    this->data = 0;
-   this->next = NULL;
+   this->head = NULL;
 }
 
 linkedlist::~linkedlist() {
@@ -20,12 +20,16 @@ linkedlist::~linkedlist() {
 
 int linkedlist::count() {
     // RECURSIVE
-   Node *title = next;
-   if(title == NULL)
+   if(head == NULL)
    {
       return 0;
    }
-   return 1+count(title->next);
+   else{
+       head = head->next;
+       //return 1+count(title->next);
+       return 1+count();
+   }
+  
     
 }
 
@@ -38,17 +42,20 @@ void linkedlist::addToFront(int n) {
 
 double linkedlist::average() {
     // uses sum and count functions
+    int countSize = count();
+    int sumLists = sum();
+    return (double(sumLists)/double(countSize));
 }
 
 int linkedlist::sum() {
     // RECURSIVE
-    if(next == NULL)
+    if(head->next == NULL)
     {
-      return 0;
+      return head->data;
     }
     else
     {
-       return next->data + Sum(next->next);
+       return head->data + sum();
     }
 
   /*
@@ -62,9 +69,15 @@ int linkedlist::sum() {
 }
 
 void linkedlist::writeInorder(string & file) {
+    
+    ofstream write;
+    
 
 }
 
 void linkedlist::writeReversed(string & file) {
     // RECURSIVE
+    ofstream write;
+    write.open(file);
+    
 }
